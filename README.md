@@ -4,7 +4,7 @@ The Pathfora Custom CSS Boilerplate library is meant to assist and streamline th
 For full details on how to leverage custom styles in a production environment visit our ["Using Custom CSS for Theming"](https://activate.getlytics.com/resources/documentation/personalization_editor_design) docs. 
 
 ## Overview
-Upon running the program as instructed below you will see `dist` directory generated. This will contain the compiled output of your CSS as well as any other image resources or alterations to the sample .html pages you have made. This is also the directly being served locally as part of the default `grunt` command.
+Upon running the program as instructed below you will see `dist` directory generated. This will contain the compiled output of your CSS as well as any other image resources or alterations to the sample .html pages you have made. This is also the directly being served locally as part of the default `gulp` command.
 
 When it comes to altering files you will want to head to `src` for the raw source files. In there you will find:
 
@@ -24,14 +24,14 @@ $ npm install
 ```
 
 ```js
-$ grunt
+$ gulp
 ```
-Finally visit `localhost:1234` in your browser to see the app running locally. The default `grunt` command will compile all files, watch for changes and continue to run a local server to test against. 
+Finally visit `localhost:1234` in your browser to see the app running locally. The default `gulp` command will compile all files, watch for changes and continue to run a local server to test against. 
 
 When looking to just build all the files without running a local server and watching for changes you can run:
 
 ```js
-$ grunt build
+$ gulp build
 ```
 
 ## Testing

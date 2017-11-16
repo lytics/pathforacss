@@ -1,0 +1,99 @@
+.pf-widget-button {
+  // position: fixed;
+  // box-shadow: 1px 0 4px 0 rgba(0,0,0,.5);
+  // border-radius: 2px;
+
+  .pf-widget-message {
+    // line-height: 42px;
+    // padding: 0 16px 5px 16px;
+    // margin: 0;
+    // font-weight: 700;
+    // display: block;
+    // cursor: pointer;
+    // overflow: hidden;
+    // max-width: 150px;
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
+  }
+
+  /* Position Styles */
+  &.pf-position-left {
+    // transform-origin: left bottom;
+    // transform: rotate(90deg);
+    // left: -50px;
+  }
+
+  &.pf-position-right {
+    // box-shadow: -1px 0px 4px 0px rgba(0,0,0,.5);
+    // transform-origin: right bottom;
+    // transform: rotate(-90deg);
+    // right: -50px;
+  }
+
+  &.pf-position-left,
+  &.pf-position-right {
+    // top: 10%;
+  }
+
+  &.pf-position-top-left,
+  &.pf-position-bottom-left {
+    // left: 42px;
+  }
+
+  &.pf-position-top-right,
+  &.pf-position-bottom-right {
+    // right: 42px;
+  }
+
+
+  &.pf-position-bottom-left,
+  &.pf-position-bottom-right {
+    // bottom: -50px;
+  }
+
+  &.pf-position-top-left,
+  &.pf-position-top-right {
+    // top: -50px;
+
+    .pf-widget-message {
+      // padding: 5px 16px 0;
+    }
+  }
+
+  /* Opened State Styles */
+  &.opened {
+    &.pf-position-left {
+      // left: -6px;
+
+      &:hover {
+        // left: -1px;
+      }
+    }
+
+    &.pf-position-right {
+      // right: -6px;
+
+      &:hover {
+        // right: -1px;
+      }
+    }
+
+    &.pf-position-bottom-left, &.pf-position-bottom-right {
+      // bottom: -6px;
+      // box-shadow: 0 1px 4px 0 rgba(0,0,0,.5);
+
+      &:hover {
+        // bottom: -1px;
+      }
+    }
+
+    &.pf-position-top-left, &.pf-position-top-right {
+      // top: -6px;
+      // box-shadow: 0 1px 4px 0 rgba(0,0,0,.5);
+
+      &:hover {
+        // top: -1px;
+      }
+    }
+  }
+}

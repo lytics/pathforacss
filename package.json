@@ -1,0 +1,14 @@
+{
+  "name": "lytics_personalization_styles_boilerplate",
+  "version": "0.0.1",
+  "author": "Lytics, Inc.",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2"
+  }
+}

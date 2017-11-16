@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pathfora CSS Playground</title>
+  </head>
+  <body>
+    <script src="https://c.lytics.io/static/pathfora.min.js"></script>
+
+    <script>
+      // bar with subscription
+      var e1 = new pathfora.Subscription({
+        id: 'e1',
+        layout: 'bar',
+        position: 'top-fixed',
+        headline: 'Sample Headline',
+        msg: 'Sample body message!',
+        variant: 2,
+        image: 'https://lytics.github.io/pathforadocs/assets/lion.jpg'
+      });
+
+      // bar without subscription
+      var e2 = new pathfora.Message({
+        id: 'e2',
+        layout: 'bar',
+        position: 'bottom-fixed',
+        headline: 'Sample Headline',
+        msg: 'Sample body message!',
+        variant: 2,
+        image: 'https://lytics.github.io/pathforadocs/assets/lion.jpg'
+      });
+
+      // slideout with form
+      var e3 = new pathfora.Form({
+        id: 'e3',
+        layout: 'slideout',
+        position: 'bottom-right',
+        headline: 'Sample Headline',
+        msg: 'Sample body message!',
+        variant: 2,
+        image: 'https://lytics.github.io/pathforadocs/assets/lion.jpg'
+      });
+
+      // slideout without form
+      var e4 = new pathfora.Message({
+        id: 'e4',
+        layout: 'slideout',
+        position: 'bottom-left',
+        headline: 'Sample Headline',
+        msg: 'Sample body message!',
+        variant: 2,
+        image: 'https://lytics.github.io/pathforadocs/assets/lion.jpg'
+      });
+
+      // center modal with form
+      var e5 = new pathfora.Subscription({
+        id: 'e5',
+        layout: 'modal',
+        headline: 'Sample Headline',
+        msg: 'Sample body message!',
+        className: 'newsweek-custom-modal',
+        variant: 2,
+        image: 'https://lytics.github.io/pathforadocs/assets/lion.jpg'
+      });
+
+      // center modal without form
+      var e6 = new pathfora.Message({
+        id: 'e6',
+        layout: 'modal',
+        headline: 'Sample Headline',
+        msg: 'Sample body message!',
+        className: 'newsweek-custom-modal',
+        variant: 2,
+        image: 'https://lytics.github.io/pathforadocs/assets/lion.jpg'
+      });
+
+      // load custom css
+      var head  = document.getElementsByTagName('head')[0];
+      var link  = document.createElement('link');
+      var cssfile = 'lytics_overrides.css';
+      link.rel  = 'stylesheet';
+      link.type = 'text/css';
+      link.href = cssfile;
+      head.appendChild(link);
+
+      // initialize widgets
+      pathfora.initializeWidgets([e1, e2, e3, e4, e5, e6]);
+    </script>
+  </body>
+</html>

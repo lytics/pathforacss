@@ -1,0 +1,154 @@
+/* Pushdown Styles */
+.pf-push-down {
+  // transition: margin-top .3s;
+
+  &.opened {
+    // margin-top: 59px;
+
+    .mobile ({
+      // margin-top: 0;
+    });
+  }
+}
+
+.pf-widget-bar {
+  // height: auto;
+  // padding: 10px 0;
+  // min-height: 59px;
+  // left: 0; right: 0;
+  // .pf-box-shadow();
+
+  .pf-widget-body {
+    // margin: 0 20px;
+    // float: left;
+  }
+
+  .pf-widget-close {
+    // top: 50%;
+    // position: absolute;
+    // margin-top: -16px;
+    // right: 20px;
+    // line-height: 1;
+    // margin-right: 0;
+  }
+
+  .pf-widget-btn {
+    // line-height: 35px;
+  }
+
+  .pf-bar-content {
+    // text-align: center;
+    // padding: 0 40px;
+
+    .mobile({
+      // padding: 0 40px 0 20px;
+    });
+
+    .pf-widget-message {
+      // white-space: nowrap;
+      // text-overflow: ellipsis;
+      // max-width: 100%;
+      // overflow: hidden;
+      // display: inline-block;
+      // white-space: normal;
+      // margin: 6px 16px;
+    }
+
+    input[type=text],
+    input[type=email] {
+      // margin: 0 1px;
+      // max-width: 200px;
+    }
+
+    form:not(.pf-custom-form) {
+      input[type=text],
+      input[type=email] {
+        // margin-bottom: 0;
+
+        &.invalid {
+          // margin: 0;
+        }
+      }
+    }
+
+    > * {
+      // display: inline-block;
+      // vertical-align: middle;
+    }
+  }
+
+  /* Position Styles */
+  &.pf-position-top-absolute,
+  &.pf-position-bottom-absolute {
+    // position: absolute;
+  }
+
+  &.pf-position-top-absolute,
+  &.pf-position-top-fixed {
+    // top: -50px;
+
+    .pf-bar-content {
+      // padding-top: 0px;
+    }
+  }
+
+  &.pf-position-bottom-fixed {
+    // bottom: -50px;
+  }
+
+  &.pf-position-bottom-fixed,
+  &.pf-position-top-fixed {
+    // position: fixed;
+  }
+
+  /* Opened State Styles */
+  &.opened {
+    &.pf-position-top-absolute {
+      // top: 0;
+    }
+
+    &.pf-position-bottom-fixed {
+      // bottom: 0;
+    }
+
+    &.pf-position-top-fixed {
+      // top: 0;
+    }
+  }
+
+  /* Variant Styles */
+  &.pf-widget-variant-2 {
+    .pf-widget-img {
+      // height: 35px;
+      // width: 35px;
+      // top: 50%;
+      // margin-top: -17.5px;
+      // position: absolute;
+
+      .mobile({
+        // display: none;
+      });
+    }
+  }
+
+  /* Type Specific Styles */
+  &.pf-message {
+    .pf-widget-btn {
+      // margin-top: 2px;
+    }
+  }
+
+  &.pf-subscription {
+    form {
+      // width: auto;
+
+      input[type=email]{
+        // height: 35px;
+      }
+
+      .pf-widget-btn {
+        // margin-top: 2px;
+      }
+    }
+  }
+}

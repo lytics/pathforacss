@@ -27,7 +27,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('less', function () {
-    gulp.src('./src/less/main.less')
+    gulp.src('./src/less/pathfora.less')
         .pipe(plumber())
         .pipe(less())
         .pipe(rename("lytics_overrides.css"))

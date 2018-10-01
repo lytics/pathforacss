@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pathfora CSS Playground</title>
+  </head>
+  <body>
+    <script src="https://c.lytics.io/static/pathfora.min.js"></script>
+
+    <script>
+      // center modal without form
+      var vidModal = new pathfora.Message({
+        id: 'vidModal',
+        layout: 'modal',
+        headline: 'A Special Message from Marc Lichtenfeld...',
+        msg: 'Click play button to listen',
+        className: 'pf-video-OC',
+        showForm: false,
+        cancelShow: false,
+        okMessage: 'UPGRADE NOW',
+        confirmAction: {
+          name: 'upgrade',
+          callback: function (event, payload) {
+            alert("change the URL!!!");
+            window.location = 'http://ryanmorrison.lyticsdemo.com/menu.html';
+          }
+        },
+        "onLoad": function(event, module) {
+            var okBtn = document.querySelector(".pf-video-OC .pf-widget-ok");
+            okBtn.style.display = 'none';
+            setTimeout (function() {okBtn.style.display = ""}, 10000);
+            var e = document.querySelector(".pf-video-OC .pf-widget-container .pf-va-middle .pf-widget-content .pf-widget-body .pf-va-middle");
+            var embedString = '<div><script src="https://fast.wistia.com/embed/medias/colcwidps2.jsonp" async><\/script><script src="https://fast.wistia.com/assets/external/E-v1.js" async><\/script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_colcwidps2 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/colcwidps2/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" onload="this.parentNode.style.opacity=1;" /></div></div></div></div></div>';
+            e.insertAdjacentHTML("afterbegin", embedString);
+        }
+      });
+
+      // load custom css
+      var head  = document.getElementsByTagName('head')[0];
+      var link  = document.createElement('link');
+      var cssfile = 'lytics_overrides.css';
+      link.rel  = 'stylesheet';
+      link.type = 'text/css';
+      link.href = cssfile;
+      head.appendChild(link);
+
+      // initialize widgets
+      pathfora.initializeWidgets([vidModal]);
+    </script>
+  </body>
+</html>

@@ -7,8 +7,7 @@
     <script src="https://c.lytics.io/static/pathfora.min.js"></script>
 
     <script>
-      // center modal without form
-      var vidModal = new pathfora.Message({
+      var vidModal = new pathfora.Form({
         id: 'vidModal',
         layout: 'modal',
         headline: 'A Special Message from Marc Lichtenfeld...',
@@ -17,6 +16,15 @@
         showForm: false,
         cancelShow: false,
         okMessage: 'UPGRADE NOW',
+        formElements: [
+          {
+            'type': 'text',
+            'name': 'email',
+            'label': '',
+            'placeholder': 'Enter email...',
+            'required': true
+          }
+        ],
         confirmAction: {
           name: 'upgrade',
           callback: function (event, payload) {

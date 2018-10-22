@@ -33,6 +33,29 @@
               if (payload.data[i].name === "email") {
                 // do things that need to happen
                 // window.open("https://signupapp2.com/signupapp/signups/process/legacy?listCode=WEALTHRE&sourceId=X302UA07&email_page=_pge_wr_generic&redirectUrl=https://readyfireaim.eu/about-us/&emailAddress=" + payload.data[i].value, "_blank");
+                var email = payload.data[i].value;
+                var data = JSON.stringify({
+                  "signup": { 
+                      "listCode": "WEALTHRE",
+                      "email_page": "_pge_wr_generic",
+                      "sourceId": "X302UA07",
+                      "emailAddress": email
+                      }
+                });
+                var xhr = new XMLHttpRequest();
+                var url = "https://signupapp2.com/signupapp/signups/process";
+                xhr.withCredentials = true;
+                xhr.onreadystatechange = function () {
+                  if (this.readyState === 4) { 
+                    console.log(this.responseText); 
+                  }
+                };
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("Cache-Control", "no-cache");
+                xhr.send(data);
+
+
                 // Overwrite with a thank you note because we aren't closing the modal
                 // Overwrite Header
                 var okBtn = document.querySelector(".pf-video-OC .pf-widget-ok");
@@ -58,14 +81,17 @@
             var s1 = document.createElement("script");
             var s2 = document.createElement("script");
             s1.setAttribute("type", "text/javascript");
-            s1.setAttribute("src", "https://fast.wistia.com/embed/medias/colcwidps2.jsonp");
+            s1.setAttribute("src", "https://fast.wistia.com/embed/medias/7jgrv19vxw.jsonp");
             s2.setAttribute("type", "text/javascript");
             s2.setAttribute("src", "https://fast.wistia.com/assets/external/E-v1.js");
-            var embedString = '<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_colcwidps2 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/colcwidps2/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>';
+            var embedString = '<div class="wistia_responsive_padding" style="padding:52.71% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_7jgrv19vxw popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%"> </span></div></div>';
             d1.insertAdjacentElement("beforeend",s1);
             d1.insertAdjacentElement("beforeend",s2);
             d1.insertAdjacentHTML("beforeend", embedString);
             e.insertAdjacentElement("afterbegin", d1);
+
+
+
         }
       });
 

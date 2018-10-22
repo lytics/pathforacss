@@ -31,8 +31,13 @@
           callback: function (event, payload) {
             for (var i = 0; i < payload.data.length; i++) {
               if (payload.data[i].name === "email") {
-                // do things that need to happen
-                // window.open("https://signupapp2.com/signupapp/signups/process/legacy?listCode=WEALTHRE&sourceId=X302UA07&email_page=_pge_wr_generic&redirectUrl=https://readyfireaim.eu/about-us/&emailAddress=" + payload.data[i].value, "_blank");
+                var xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+                xhr.onreadystatechange = function () {
+                  if (this.readyState === 4) { 
+                    console.log(this.responseText); 
+                  }
+                };
                 var email = payload.data[i].value;
                 var data = JSON.stringify({
                   "signup": { 
@@ -42,14 +47,7 @@
                       "emailAddress": email
                       }
                 });
-                var xhr = new XMLHttpRequest();
                 var url = "https://signupapp2.com/signupapp/signups/process";
-                xhr.withCredentials = true;
-                xhr.onreadystatechange = function () {
-                  if (this.readyState === 4) { 
-                    console.log(this.responseText); 
-                  }
-                };
                 xhr.open("POST", url, true);
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader("Cache-Control", "no-cache");

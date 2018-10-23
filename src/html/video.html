@@ -15,7 +15,7 @@
         className: 'pf-video-OC',
         showForm: false,
         cancelShow: false,
-        okMessage: 'UPGRADE NOW',
+        okMessage: 'SIGN UP',
         formElements: [
           {
             'type': 'text',
@@ -26,7 +26,7 @@
           }
         ],
         confirmAction: {
-          name: 'upgrade',
+          name: 'signup',
           close: false,
           callback: function (event, payload) {
             for (var i = 0; i < payload.data.length; i++) {
@@ -52,10 +52,7 @@
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader("Cache-Control", "no-cache");
                 xhr.send(data);
-
-
                 // Overwrite with a thank you note because we aren't closing the modal
-                // Overwrite Header
                 var okBtn = document.querySelector(".pf-video-OC .pf-widget-ok");
                 okBtn.style.display = 'none';
                 var h = document.querySelector(".pf-widget.pf-video-OC .pf-widget-headline");
@@ -80,6 +77,8 @@
           }
         },
         "onLoad": function(event, module) {
+            var cancelBtn = document.querySelector(".pf-video-OC .pf-widget-cancel");
+            cancelBtn.style.display = 'none';
             var okBtn = document.querySelector(".pf-video-OC .pf-widget-ok");
             okBtn.style.display = 'none';
             setTimeout (function() {okBtn.style.display = ""}, 10000);

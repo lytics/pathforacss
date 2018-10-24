@@ -69,7 +69,7 @@
                 b.insertAdjacentElement("beforebegin", imageSpan);
                 var e = document.querySelector(".pf-video-OC .pf-widget-container .pf-va-middle .pf-widget-content .pf-widget-body .pf-va-middle");
                 e.innerHTML = "<div align=\"left\">You've just taken the first step towards reaching the retirement of your dreams. What's next?" +
-                  "</br></br>First, <a href=\"\">check out our website</a> - it's full of helpful retirement planning resources and investing research advice." +
+                  "</br></br>First, <b><u>check out our website</u></b> - it's full of helpful retirement planning resources and investing research advice." +
                   "</br></br>And with your new subscription, you'll receive daily tips and proven strategies for growing your income, reducing risk and building a better future for you and your family" +
                   "</div>";
               }
@@ -78,7 +78,9 @@
         },
         "onLoad": function(event, module) {
             var cancelBtn = document.querySelector(".pf-video-OC .pf-widget-cancel");
-            cancelBtn.style.display = 'none';
+            if (cancelBtn) {
+              cancelBtn.style.display = 'none';
+            }
             var okBtn = document.querySelector(".pf-video-OC .pf-widget-ok");
             okBtn.style.display = 'none';
             setTimeout (function() {okBtn.style.display = ""}, 10000);

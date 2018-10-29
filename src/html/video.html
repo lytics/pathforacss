@@ -86,6 +86,14 @@
             setTimeout (function() {okBtn.style.display = ""}, 10000);
             var e = document.querySelector(".pf-video-OC .pf-widget-container .pf-va-middle .pf-widget-content .pf-widget-body .pf-va-middle");
             var d1 = document.createElement("div");
+            // new embed code
+            var iframeDiv = "<div class=\"wistia_responsive_padding\" style=\"padding:52.71% 0 0 0;position:relative;\"><div class=\"wistia_responsive_wrapper\" style=\"height:100%;left:0;position:absolute;top:0;width:100%;\"><iframe src=\"https://fast.wistia.net/embed/iframe/7jgrv19vxw?videoFoam=true\" title=\"Wistia video player\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" class=\"wistia_embed\" name=\"wistia_embed\" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width=\"100%\" height=\"100%\"></iframe></div></div>";
+            var iframeScript = document.createElement("script");
+            iframeScript.setAttribute("type", "text/javascript");
+            iframeScript.setAttribute("src", "https://fast.wistia.net/assets/external/E-v1.js");
+            d1.insertAdjacentHTML("beforeend", iframeDiv);
+            d1.insertAdjacentElement("beforeend", iframeScript);
+/* Old Embed Code
             var s1 = document.createElement("script");
             var s2 = document.createElement("script");
             s1.setAttribute("type", "text/javascript");
@@ -96,6 +104,7 @@
             d1.insertAdjacentElement("beforeend",s1);
             d1.insertAdjacentElement("beforeend",s2);
             d1.insertAdjacentHTML("beforeend", embedString);
+*/
             e.insertAdjacentElement("afterbegin", d1);
         }
       });

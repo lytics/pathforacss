@@ -7,23 +7,23 @@ var gulp = require("gulp"),
   del = require("del"),
   destination = "dist";
 
-gulp.task("html", function() {
+gulp.task("html", async function() {
   gulp.src("./src/html/*").pipe(gulp.dest(destination));
 });
 
-gulp.task("js", function() {
+gulp.task("js", async function() {
   gulp.src("./src/js/*").pipe(gulp.dest(destination));
 });
 
-gulp.task("img", function() {
+gulp.task("img", async function() {
   gulp.src("./src/img/*").pipe(gulp.dest(destination + "/img/"));
 });
 
-gulp.task("clean", function() {
+gulp.task("clean", async function() {
   del.sync([destination + "/**/*"]);
 });
 
-gulp.task("less", function() {
+gulp.task("less", async function() {
   gulp
     .src("./src/less/pathfora.less")
     .pipe(plumber())
@@ -35,7 +35,7 @@ gulp.task("less", function() {
     .pipe(gulp.dest(destination));
 });
 
-gulp.task("preview", function() {
+gulp.task("preview", async function() {
   connect.server({
     port: 1234,
     root: destination,
@@ -43,12 +43,12 @@ gulp.task("preview", function() {
   });
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", async function() {
   gulp.watch(
     ["src/less/**/*.less", "src/html/*.html", "src/js/*.js", "src/img/*"],
-    ["build"]
+    gulp.series("build")
   );
 });
 
-gulp.task("build", ["clean", "html", "js", "img", "less"]);
-gulp.task("default", ["build", "preview", "watch"]);
+gulp.task("build", gulp.parallel("clean", "html", "js", "img", "less"));
+gulp.task("default", gulp.series("build", "preview", "watch"));
